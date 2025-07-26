@@ -1,0 +1,51 @@
+{
+  "name": "browser",
+  "productName": "Browser",
+  "version": "1.0.0",
+  "description": "A minimal web browser built with Electron",
+  "main": "main.js",
+  "homepage": ".",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "build": "electron-builder",
+    "dist": "electron-builder --publish=never",
+    "release": "electron-builder --publish=always"
+  },
+  "keywords": ["browser", "electron", "minimal"],
+  "author": "",
+  "license": "MIT",
+  "build": {
+    "appId": "com.browser.app",
+    "productName": "Browser",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer.js",
+      "index.html",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "icon": "assets/icon.png",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": ["x64", "arm64"]
+        },
+        {
+          "target": "zip",
+          "arch": ["x64", "arm64"]
+        }
+      ]
+    }
+  },
+  "devDependencies": {
+    "electron": "^32.0.0",
+    "electron-reload": "^2.0.0-alpha.1",
+    "electron-builder": "^24.13.3"
+  }
+}
