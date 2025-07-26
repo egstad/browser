@@ -5,6 +5,9 @@ on:
     tags:
       - 'v*'
 
+permissions:
+  contents: write
+
 jobs:
   release:
     runs-on: macos-latest
@@ -24,6 +27,8 @@ jobs:
 
       - name: Build application
         run: npm run dist
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: false
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
