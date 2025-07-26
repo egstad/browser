@@ -13,10 +13,10 @@ A minimal, chrome-less web browser built with Electron.
 
 Download the latest version for macOS:
 
-- **Intel Macs**: [Browser-1.0.0.dmg](https://github.com/YOUR-USERNAME/browser/releases/latest/download/Browser-1.0.0.dmg)
-- **Apple Silicon**: [Browser-1.0.0-arm64.dmg](https://github.com/YOUR-USERNAME/browser/releases/latest/download/Browser-1.0.0-arm64.dmg)
+- **Intel Macs**: [Browser-1.0.0.dmg](https://github.com/egstad/browser/releases/latest/download/Browser-1.0.0.dmg)
+- **Apple Silicon**: [Browser-1.0.0-arm64.dmg](https://github.com/egstad/browser/releases/latest/download/Browser-1.0.0-arm64.dmg)
 
-[View all releases](https://github.com/YOUR-USERNAME/browser/releases)
+[View all releases](https://github.com/egstad/browser/releases)
 
 ## Keyboard Shortcuts
 
@@ -26,6 +26,8 @@ Download the latest version for macOS:
 - `Escape` - Hide URL bar
 
 ## Development
+
+### Getting Started
 
 ```bash
 # Install dependencies
@@ -37,6 +39,66 @@ npm run dev
 # Build for distribution
 npm run dist
 ```
+
+### Creating Releases
+
+This project uses automated releases via GitHub Actions. Here's how to create and maintain versions:
+
+#### 1. Update Version
+
+First, update the version in `package.json`:
+
+```bash
+# For patch releases (1.0.0 -> 1.0.1)
+npm version patch
+
+# For minor releases (1.0.0 -> 1.1.0)
+npm version minor
+
+# For major releases (1.0.0 -> 2.0.0)
+npm version major
+```
+
+This automatically updates `package.json` and creates a git commit.
+
+#### 2. Create and Push Tag
+
+```bash
+# Push the version commit and tag
+git push origin main --tags
+```
+
+#### 3. Automated Release
+
+Once you push a tag (like `v1.0.1`), GitHub Actions will automatically:
+- Build the app for both Intel and Apple Silicon
+- Create DMG and ZIP files
+- Create a GitHub release with download links
+- Generate release notes from commits
+
+#### Manual Release (if needed)
+
+```bash
+# Build and test locally first
+npm run dist
+
+# Create tag manually
+git tag v1.0.1
+git push origin v1.0.1
+```
+
+### Version Strategy
+
+- **Patch** (1.0.x): Bug fixes, minor improvements
+- **Minor** (1.x.0): New features, UI changes
+- **Major** (x.0.0): Breaking changes, major rewrites
+
+### Maintenance
+
+- Check [GitHub Actions](../../actions) for build status
+- Monitor [Issues](../../issues) for bug reports
+- Update dependencies regularly with `npm update`
+- Test builds locally before releasing
 
 ## License
 
