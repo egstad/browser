@@ -41,6 +41,19 @@
           "arch": ["x64", "arm64"]
         }
       ]
+    },
+    "win": {
+      "icon": "assets/icon.png",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        },
+        {
+          "target": "zip",
+          "arch": ["x64"]
+        }
+      ]
     }
   },
   "devDependencies": {

@@ -11,12 +11,17 @@ A minimal, chrome-less web browser built with Electron.
 
 ## Download
 
-Download the latest version for macOS:
+Download the latest version:
 
-- **Intel Macs**: [Download DMG](https://github.com/egstad/browser/releases/latest)
-- **Apple Silicon**: [Download DMG](https://github.com/egstad/browser/releases/latest)
+### macOS
+- **Intel Macs**: Download the DMG file
+- **Apple Silicon**: Download the ARM64 DMG file
 
-> Click the appropriate DMG file for your Mac architecture from the latest release
+### Windows
+- **Installer**: Download the `.exe` installer
+- **Portable**: Download the ZIP file
+
+> Visit the [latest release](https://github.com/egstad/browser/releases/latest) and choose the right file for your platform
 
 [View all releases](https://github.com/egstad/browser/releases)
 
